@@ -1,6 +1,6 @@
 $main_menu-mobile_menu_cutoff: 58em;
-$row-width: 64em;
-$body-font-family: "Helvetica Neue", Arial, Helvetica, Helmet, Freesans, sans-serif;
+$row-width: 84em;
+$body-font-family: 'Montserrat', Arial, Helvetica, Helmet, Freesans, sans-serif;
 $base-font-size: 16px;
 
 // Specify the filename and dimensions of your logo file here
@@ -24,30 +24,33 @@ $color_light_grey: #e2dfd9;
 $color_mid_grey: #959287;
 $color_dark_grey: #6c6b68;
 
+$color_blue: #05417d;
+$color_light_blue: #33c5ed;
+
 $color_neutral_light: $color_sand;
 $color_neutral_dark: $color_black;
-$color_primary: $color_violet;
-$color_secondary: $color_orange;
+$color_primary: $color_blue;
+$color_secondary: $color_light_blue;
 
 $body-bg: $color_neutral_light;
 
 $body-font-color: $color_neutral_dark;
 $link-color: darken($color_blue, 20%);
-$action-color: $color_green;
-$font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$action-color: $color_light_blue;
+$font-family: "Montserrat", Helvetica, Arial, sans-serif;
 $form_input-bg: $color_white;
 $form-label-font-color: $color_black;
 
-$button-bg: darken($color_green, 10%);
+$button-bg: darken($color_light_blue, 10%);
 $button-color: $color_white;
 
-$status-success: darken($color_green, 18%);
+$status-success: darken($color_light_blue, 18%);
 $status-failure: darken($color_red, 10%);
-$status-pending: darken($color_orange, 28%);
+$status-pending: darken($color_light_blue, 28%);
 
-$notice-color: $color_green;
+$notice-color: $color_light_blue;
 $error-color: $color_red;
-$action-color: $color_orange;
+$action-color: $color_light_blue;
 
-$banner_inner_bg: $color_primary;
-$topnav_bg: darken($color_primary, 10%);
+$banner_inner_bg: #0056A6;
+$topnav_bg: #004281;

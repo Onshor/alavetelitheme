@@ -11,36 +11,18 @@
 /* General styling of nav menu items */
 %menu-item {
   text-decoration: none;
-  color: transparentize($color_white, 0.2);
-  @include ie8 {
-    color: $color_white;
-  }
-  transition: background-color 0.5s ease-out;
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: darken($color_primary, 15%);
-    color: $color_white;
-  }
-
+  color: $color_white;
 }
 
 /* Selected menu item */
 %selected-menu-item {
   font-weight: bold;
-  color: $color_primary;
-  background-color: $color_neutral_light;
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: $color_neutral_light;
-  }
 }
 
 .js-loaded {
   .account-link {
     padding-right: 2em;
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min( $main_menu-mobile_menu_cutoff ) {
       //make it appear like it's aligned with the grid, even though it isn't
       margin-right: 0.935em;
       &:after {
@@ -52,7 +34,7 @@
 
 .logged-in-menu {
   color: $link-color;
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
+  @include respond-min( $main_menu-mobile_menu_cutoff ) {
     color: $color_black;
     box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.1);
   }
@@ -61,7 +43,7 @@
 .navigation .logged-in-menu a,
 .navigation .logged-in-menu__signout-link a {
   color: $color_white;
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
+  @include respond-min( $main_menu-mobile_menu_cutoff ) {
     color: $link-color;
     text-decoration: none;
     transition: none;
@@ -82,7 +64,7 @@
 }
 
 /* General styles */
-body{
+body {
   background-color: $body-bg;
   color: $body-font-color;
 }
@@ -92,19 +74,22 @@ body{
 }
 
 a {
+  outline: none;
   &:link,
   &:visited {
     color: $link-color;
+    outline: none;
   }
   &:hover,
   &:active,
   &:focus {
     color: darken($link-color, 10%);
+    outline: none;
   }
 }
 
 /* Let h1s be a little smaller on small screens */
-@media( max-width: $main_menu-mobile_menu_cutoff ){
+@media( max-width: $main_menu-mobile_menu_cutoff ) {
   h1 {
     font-size: 2em;
   }
@@ -121,11 +106,11 @@ form input[type="number"] {
     border-radius: 0;
     background-color: $form_input-bg;
     /* Set a fixed height for text inputs in older IE 8 */
-    @include ie8{
+    @include ie8 {
         height: 2.3125em;
     }
     /* Do the same in px for IE < 7 */
-    @include lte-ie7{
+    @include lte-ie7 {
         height: 22px;
     }
 }
@@ -265,23 +250,15 @@ a.link_button_green_large {
 }
 
 .site-title__logo {
-  // Smaller logo on mobiles
-  width: ($logo-width / 2);
-  height: ($logo-height / 2);
-  background-size: ($logo-width / 2) ($logo-height / 2);
-
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
-    width: $logo-width;
-    height: $logo-height;
-    background-size: $logo-width $logo-height;
-  }
+  background-size: 100%;
+  background-position: 0 5px;
 }
 
 .navigation {
   border-bottom: none;
   a {
     @extend %menu-item;
-    color: transparentize($color_white, 0.2);
+    color: $color_white;
     @media( min-width: $main_menu-mobile_menu_cutoff ) {
       padding: 0.875em 1em;
     }
@@ -294,7 +271,7 @@ a.link_button_green_large {
   /* Vertically align the search box */
   #navigation_search{
     input{
-      margin-top:0.313em;
+      margin-top: 0.313em;
       margin-bottom:0.313em;
       height: 1.875em;
       @include ie8 {
@@ -313,12 +290,12 @@ a.link_button_green_large {
   }
 }
 
-#navigation_search_button{
+#navigation_search_button {
   background-color: $color_white;
   border: none;
   transition: all 0.3s ease-out;
   color: $color_primary;
-  border-radius: 0;
+  border-radius: 30px;
   font-size: inherit;
 }
 
@@ -330,7 +307,7 @@ a.link_button_green_large {
 #notice, #error, .errorExplanation, #request_header_text, #hidden_request, .describe_state_form form, .undescribed_requests, .warning {
   border-top: 10px solid;
   font-size: 1em;
-  margin:1em 0;
+  margin: 1em 0;
   padding: 1.5em;
 
   p:first-child {
@@ -338,7 +315,7 @@ a.link_button_green_large {
   }
 
   p:last-child {
-    margin-bottom:0;
+    margin-bottom: 0;
   }
 
   ul {
@@ -354,7 +331,6 @@ a.link_button_green_large {
 #error, .errorExplanation, #hidden_request, .warning {
   background-color: desaturate(lighten($error-color, 30%),10%);
   border-color: $error-color;
-
 }
 
 .undescribed_requests {
@@ -364,28 +340,21 @@ a.link_button_green_large {
 
 /* LANGUAGE SWITCHER */
 #user_locale_switcher {
-  background-color: $color_primary;
-  @include respond-min($main_menu-mobile_menu_cutoff) {
-    background-color: transparent;
-  }
+  float: right;
+  background-color: transparent;
 }
 
-/* Dropdown list for switching locale */
+/* Switching locale */
 .locale-list {
+  position: initial;
+  margin-right: 35px;
   border-bottom: 0;
-  @include respond-min($main_menu-mobile_menu_cutoff) {
-    position: absolute;
-    left: ($logo-width + 40px);
-    top: 2.2em;
-    right: auto;
-  }
   .locale-list-trigger {
     margin-bottom: 0;
     color: $color_white;
     color: transparentize($color_white, 0.8);
     @include respond-min($main_menu-mobile_menu_cutoff) {
       margin-top: 0;
-      border: 1px solid desaturate(lighten($color_primary, 5%), 5%);
       border-radius: 3px;
       color: $link-color;
       padding: 0;
@@ -396,72 +365,43 @@ a.link_button_green_large {
 .locale-list-trigger .current-locale {
   position: relative;
   z-index: 999;
-  border-radius: 3px;
   color: $color_white;
   @include respond-min($main_menu-mobile_menu_cutoff) {
     padding: 0.66em 2em 0.66em 0.66em;
   }
 }
 
-.locale-list-trigger .current-locale:after {
-  display: block;
-  position: absolute;
-  content: '';
-  right: 10px;
-  top: 12px;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  @include ie8 {
-    border-top: 5px solid $color_white;
-  }
-  border-top: 5px solid transparentize($color_white, 0.6);
-}
-
 .locale-list-trigger .current-locale,
 .locale-list .available-languages a {
-  display: block;
+  display: inline-block;
   cursor: pointer;
   font-weight: normal;
   @include respond-min($main_menu-mobile_menu_cutoff) {
-    font-size: 0.8125em;
+    font-size: 0 13.5px;
     line-height: 1em;
   }
 }
 
+.locale-list .current-locale {
+  color: $color_light_blue;
+  font-size: 13.5px;
+}
+
 .locale-list .available-languages {
-  display: none;
   padding: 0;
   margin-bottom: 0;
   margin-top: 0;
-  font-size: 0.8125em;
-  @include respond-min($main_menu-mobile_menu_cutoff) {
-    position: absolute;
-    top: 2em;
-    left: 0;
-    z-index: 1000;
-    border-radius: 3px;
-    font-size: 1em;
-    min-width: 100%;
-  }
-
+  font-size: 13.5px;
 }
 
 .locale-list li {
   list-style-type: none;
-  border-bottom: 1px solid desaturate(lighten($color_primary, 3%), 5%);
   @include respond-min($main_menu-mobile_menu_cutoff) {
-    border-bottom-color: $color_neutral_dark;
-    display: block;
+    display: inline-block;
   }
   &:last-child {
     @include respond-min($main_menu-mobile_menu_cutoff) {
       border-bottom: 0;
-      a {
-        border-bottom-right-radius: 3px;
-        border-bottom-left-radius: 3px;
-      }
     }
   }
 }
@@ -469,30 +409,14 @@ a.link_button_green_large {
 .locale-list .available-languages a,
 .locale-list .available-languages a:link,
 .locale-list .available-languages a:visited {
-  display: block;
-  background-color: $color_primary;
+  display: inline-block;
   padding: 0.66em 1em;
   width: 100%;
   text-decoration: none;
-  color: transparentize($color_white, 0.2);
+  color: $color_white;
   @include ie8 {
     color: $color_white;
   }
-  @include respond-min($main_menu-mobile_menu_cutoff) {
-    background-color: lighten($color_neutral_dark, 6%);
-  }
-  transition: background-color 0.5s ease-out;
-}
-
-.locale-list .available-languages a:hover,
-.locale-list .available-languages a:focus {
-  border-bottom: none;
-  background-color: darken($color_primary, 5%);
-  @include respond-min($main_menu-mobile_menu_cutoff) {
-    background-color: $color_neutral_dark
-  }
-  color: $color_white;
-
 }
 
 /* JS interactivity */
@@ -502,41 +426,16 @@ a.link_button_green_large {
 }
 
 .locale-list.active .current-locale {
-  background-color: $color_primary;
   color: $color_white;
-  border-color: $color_primary;
-  @include respond-min($main_menu-mobile_menu_cutoff) {
-    background-color: lighten($color_neutral_dark, 6%);
-    border-bottom: 1px solid lighten($color_neutral_dark, 2%);
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
 }
-
-.locale-list.active .current-locale:after {
-  @include ie8 {
-    border-top-color: $color_white;
-  }
-  border-top-color: transparentize($color_white, 0.6);
-}
-
-
-.locale-list.active .locale-list-trigger {
-  border-color: transparent;
-  @include respond-min($main_menu-mobile_menu_cutoff) {
-    border-color: $color_neutral_dark;
-  }
-}
-
 
 #banner {
-
   /* Hide the greeting on smaller devices */
   .greeting {
     display: none;
   }
 
-  .rsp_menu_button{
+  .rsp_menu_button {
     position: absolute;
     top: 5px; // vertically centre the button in the header
     right: 4px; // 15px for margin minus 9 for background offset
@@ -770,7 +669,7 @@ a.link_to_this {
 
 dt {
   font-weight: 700;
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
+  @include respond-min( $main_menu-mobile_menu_cutoff ) {
     font-size: 2em;
     line-height: 1.1em;
   }
@@ -781,7 +680,7 @@ dt {
 #frontpage_examples {
   .excerpt {
     padding: 0.2em 0 0 0;
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
+    @include respond-min( $main_menu-mobile_menu_cutoff ) {
       padding: 0 0 0 2em;
     }
   }
@@ -793,9 +692,25 @@ dt {
 /* How it works section */
 .steps__list {
   li {
-    @include respond-min( $main_menu-mobile_menu_cutoff ){
-      width: 33.3333%;
+    @include respond-min( $main_menu-mobile_menu_cutoff ) {
+      width: 25%;
       margin-left: 0 !important;
+    }
+
+    .step-circle {
+      display: inline-block;
+      text-align: center;
+      border-radius: 50%;
+      background: $banner_inner_bg;
+      width: 200px;
+      height: 200px;
+      margin-bottom: 15px;
+      img {
+        margin-top: 36.5px;
+        vertical-align: middle;
+        text-align: center;
+        margin-left: 5.5px;
+      }
     }
   }
 }
@@ -804,7 +719,7 @@ dt {
   background-color: $color_white;
   padding: 2em;
   box-shadow: 0 1px 2px transparentize($color_black, 0.75);
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
+  @include respond-min( $main_menu-mobile_menu_cutoff ) {
     min-height: 11em;
   }
   p {
@@ -821,7 +736,7 @@ dt {
   padding: 1em;
   border-radius: 100%;
   color: $color_white;
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
+  @include respond-min( $main_menu-mobile_menu_cutoff ) {
     left: 50%;
     margin-left: -1.75em;
     bottom: -1em;
@@ -830,7 +745,7 @@ dt {
 }
 
 .learn-more-foi {
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
+  @include respond-min( $main_menu-mobile_menu_cutoff ) {
     margin-top: 3em;
   }
   a {
@@ -839,7 +754,7 @@ dt {
 }
 
 .learn-more-foi {
-  @include respond-min( $main_menu-mobile_menu_cutoff ){
+  @include respond-min( $main_menu-mobile_menu_cutoff ) {
     margin-top: 3em;
   }
   a {
@@ -873,16 +788,17 @@ dt {
 }
 
 .homepage-hero {
+  height: 540px;
   background-color: $color_neutral_dark;
   background-image: image-url('homepage-background-small.jpg');
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
   color: $color_white;
-  padding: 2em 0 5em;
+  padding: 4em 0 5em;
   position: relative;
   @include respond-min($main_menu-mobile_menu_cutoff) {
-    padding: 5em 0 8em;
+    padding: 9.65em 0 8em;
     background-image: image-url('homepage-background.jpg');
   }
 
@@ -920,17 +836,30 @@ dt {
   }
   .new-request__make-new-requests {
     @include button-base;
-    background-color: desaturate(darken($color_secondary, 10%), 5%);
+    background-color: $color_secondary;
     color: $color_white;
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: darken($color_secondary, 20%);
-    }
+    border-radius: 25px;
+    padding: 18px 50px;
+    font-size: 18px;
+    margin-top: 15px;
   }
 }
 
 // User menu
 .pro-pill {
   background-color: desaturate(darken($color_secondary, 10%), 5%);
+}
+
+.infromini-credit {
+  text-align: center;
+  clear: both;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.infromini-credit div {
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: inline-block;
 }
