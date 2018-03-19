@@ -1,7 +1,7 @@
-Alavetelitheme
+Infrominitheme
 ==============
 
-This is a "hello world" type theme package for Alaveteli.
+This is the official theme of [Informini](http://informini.org/).
 
 The intention is to support simple overlaying of templates and
 resources without the need to touch the core Alaveteli software.

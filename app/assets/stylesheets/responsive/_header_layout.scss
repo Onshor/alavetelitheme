@@ -216,17 +216,13 @@
   }
   input {
     @include grid-column($columns:10);
-    margin-right:0;
+    margin-right: 0;
+    background: url(/assets/search.png) no-repeat scroll 12.5px 10px;
+    background-color: rgba(0, 0, 0, 0);
+    padding-left: 45px;
+    background-color: #FFFFFF;
     @include lte-ie7 {
       width: 10.063em;
-    }
-  }
-  button[type="submit"] {
-    @include prefix-postfix-base;
-    @include grid-column($columns:2,$float:right);
-    border: none;
-    @include lte-ie7 {
-      width: 2.125em;
     }
   }
 }
