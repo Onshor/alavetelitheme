@@ -1,18 +1,17 @@
 <div class="homepage-hero">
   <div class="row">
-    <div class="hero__intro">
-      <%= render :partial => "new_request" %>
-    </div>
+    <div class="homepage-hero-content-wrapper">
+      <div class="hero__intro">
+        <%= render :partial => "new_request" %>
+      </div>
 
-    <p class="intro__browse">
-      <%= _("Browse <a href=\"{{requests_url}}\">" \
-            "{{number_of_requests}} requests</a> to " \
-            "<a href=\"{{authorities_url}}\">" \
-            "{{number_of_authorities}} authorities</a>",
-          :requests_url => request_list_successful_path,
-          :number_of_requests => number_with_delimiter(@number_of_requests),
-          :authorities_url => list_public_bodies_default_path,
-          :number_of_authorities => number_with_delimiter(@number_of_authorities)) %>
-    </p>
+      <div class="intro__browse">
+        <h3><%= number_with_delimiter(@number_of_requests) %></h3>
+        <span><%= _("Number of requests") %></span>
+
+        <h3><%= number_with_delimiter(@number_of_authorities) %></h3>
+        <span><%= _("Number of authorities") %></span>
+      </div>
+    </div>
   </div>
 </div>

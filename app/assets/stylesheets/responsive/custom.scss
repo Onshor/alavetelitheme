@@ -787,6 +787,12 @@ dt {
   @include button-secondary();
 }
 
+.homepage-hero-content-wrapper {
+  max-width: 84em;
+  padding-left: 130px;
+  padding-right: 130px;
+}
+
 .homepage-hero {
   height: 540px;
   background-color: $color_neutral_dark;
