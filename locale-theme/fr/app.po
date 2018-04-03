@@ -18,20 +18,23 @@ msgstr "Envoyer des demandes"
 msgid "Your privacy"
 msgstr "Votre vie privée"
 
-mgsid "Number of requests"
+msgid "Number of requests"
 msgstr "Nombre de demandes"
 
-mgsid "Public authorities"
+msgid "Public authorities"
 msgstr "Autorités publiques"
 
-mgsid "Search for the requested information"
+msgid "Search for the requested information"
 msgstr "Chercher l'information demandée"
 
-mgsid "Go through the authorities to select one"
+msgid "Go through the authorities to select one"
 msgstr "Parcourir les autorités pour en sélectionner une"
 
-mgsid "Fill out the application form"
+msgid "Fill out the application form"
 msgstr "Remplir le formulaire de la demande"
 
-mgsid "Classify the response"
+msgid "Classify the response"
 msgstr "Classer la response"
+
+msgid "Who is behind this?"
+msgstr "Qui est derrière ca?"

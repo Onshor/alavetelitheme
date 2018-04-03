@@ -18,20 +18,23 @@ msgstr "Making requests"
 msgid "Your privacy"
 msgstr "Your privacy"
 
-mgsid "Number of requests"
+msgid "Number of requests"
 msgstr "Number of requests"
 
-mgsid "Public authorities"
+msgid "Public authorities"
 msgstr "Public authorities"
 
-mgsid "Search for the requested information"
+msgid "Search for the requested information"
 msgstr "Search for the requested information"
 
-mgsid "Go through the authorities to select one"
+msgid "Go through the authorities to select one"
 msgstr "Go through the authorities to select one"
 
-mgsid "Fill out the application form"
+msgid "Fill out the application form"
 msgstr "Fill out the application form"
 
-mgsid "Classify the response"
+msgid "Classify the response"
 msgstr "Classify the response"
+
+msgid "Who is behind this?"
+msgstr "Who is behind this?"

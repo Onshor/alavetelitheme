@@ -71,6 +71,8 @@ body {
 
 .entirebody {
   font-family: $font-family;
+  min-height: 100%;
+  position: relative;
 }
 
 a {
@@ -465,17 +467,23 @@ a.link_button_green_large {
 
 /* Footer */
 #footer {
-  background-color: $color_neutral_dark;
-  color: darken($color_neutral_light, 10%);
+  position: absolute;
+  width: 100%;
+  color: $color_white;
+  font-weight: bold;
+  background-color: $color_blue;
   a {
     text-decoration: none;
     color: $color_white;
     &:hover,
     &:active,
     &:focus {
-      color: lighten($color_primary, 10%);
-      text-decoration: underline;
+      color: $color_white;
+      text-decoration: none;
     }
+  }
+  p {
+    text-align: center;
   }
 }
 
@@ -868,4 +876,8 @@ dt {
   padding-left: 30px;
   padding-right: 30px;
   display: inline-block;
+}
+
+.section-head {
+  color: $color_blue;
 }
