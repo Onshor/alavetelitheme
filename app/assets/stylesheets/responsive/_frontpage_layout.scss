@@ -90,7 +90,7 @@
 
 .homepage-how-it-works {
   padding: 2em 0;
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
   @include respond-min($main_menu-mobile_menu_cutoff) {
     position: relative;
     @include clearfix;

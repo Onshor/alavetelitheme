@@ -174,14 +174,14 @@ input.use-datepicker[type=text] {
 
 @mixin button-secondary($args...) {
   @include button-base($args...);
-  background-color: desaturate(darken($color_sand, 10%), 5%);
-  color: $color_black;
+  background-color: desaturate(darken($color_light_blue, 10%), 5%);
+  color: $color_white;
   font-weight: normal;
   &:hover,
   &:active,
   &:focus {
-    color: $color_black;
-    background-color: desaturate(darken($color_sand, 20%), 5%);
+    color: $color_white;
+    background-color: desaturate(darken($color_light_blue, 20%), 5%);
   }
 }
 
@@ -271,16 +271,21 @@ a.link_button_green_large {
     @extend %selected-menu-item;
   }
   /* Vertically align the search box */
-  #navigation_search{
-    input{
-      margin-top: 0.313em;
-      margin-bottom:0.313em;
-      height: 1.875em;
+  #navigation_search {
+    input {
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 0.313em;
+      height: 30px;
       @include ie8 {
-        height: 33px;
-        font-size: 1.1em;
+        height: 30px;
+        font-size: 0.85em;
         padding: 0;
       }
+      margin-top: 10px !important;
+      height: 30px !important;
+      font-size: 0.85em !important;
+      border: none !important;
     }
   }
 
@@ -472,6 +477,7 @@ a.link_button_green_large {
   color: $color_white;
   font-weight: bold;
   background-color: $color_blue;
+  bottom: 0px;
   a {
     text-decoration: none;
     color: $color_white;
@@ -484,6 +490,9 @@ a.link_button_green_large {
   }
   p {
     text-align: center;
+    padding: 0px;
+    margin: 7px;
+    margin-top: 10px;
   }
 }
 
@@ -704,6 +713,7 @@ dt {
       width: 25%;
       margin-left: 0 !important;
     }
+    margin-left: 0 !important;
 
     .step-circle {
       display: inline-block;
@@ -796,9 +806,10 @@ dt {
 }
 
 .homepage-hero-content-wrapper {
-  max-width: 84em;
-  padding-left: 130px;
-  padding-right: 130px;
+  @include grid-column(12);
+  @include respond-min($main_menu-mobile_menu_cutoff) {
+    @include grid-column(8, $offset: 2);
+  }
 }
 
 .homepage-hero {
@@ -880,4 +891,15 @@ dt {
 
 .section-head {
   color: $color_blue;
+}
+
+#wrapper {
+  padding-bottom: 70px;
+}
+
+.track-request-action {
+  margin-top: 0;
+  width: 100%;
+  margin-left: 0px !important; 
+  margin-bottom: 4.5px !important;
 }
