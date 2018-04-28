@@ -1,0 +1,29 @@
+.steps__step-number {
+    background-color: #f3f1eb;
+    color:#0056a6;
+    left: 25%;
+    top: 10.5em;
+    box-shadow: 0 1px 2px rgb(0, 0, 0);
+    padding: 0.4em;
+    height: 2.2em;
+    width: 2.2em;
+}
+.p_howitwork {
+    margin-top:1.5em;
+}
+.intro__browse {
+    margin-top: -50px;
+}
+.link_hero_intro {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+.div_hero_intro {
+    padding-bottom: 65px;
+}
+.span_hero_intro {
+    font-size: -webkit-xxx-large;
+}
+.js-loaded .navigation .logged-in-menu {
+    right: unset;
+}
